@@ -57,10 +57,11 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
+        // fields to pick from user
         $credentials = $request->only(['email', 'password']);
 
         if (! $token = Auth::attempt($credentials)) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+            return response()->json(['message' => 'You are not Unauthorized to do that .. '], 401);
         }
 
         return $this->respondWithToken($token);
