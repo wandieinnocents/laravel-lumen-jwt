@@ -19,12 +19,17 @@ $router->get('/', function () use ($router) {
 });
 
 
-// API route group
+
+
+ // API route group
 $router->group(['prefix' => 'api'], function () use ($router) {
-    // Corresponds to  "/api/register
-    $router->post('register', 'AuthController@register');
- 
- });
+    // Matches "/api/register
+   $router->post('register', 'AuthController@register');
+
+     // Matches "/api/login
+    $router->post('login', 'AuthController@login');
+});
+
 
 // create post single route
 //$router->get('create',['uses', 'PostController@create']);
