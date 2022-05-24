@@ -18,16 +18,24 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-
-
-
  // API route group
 $router->group(['prefix' => 'api'], function () use ($router) {
     // Matches "/api/register
    $router->post('register', 'AuthController@register');
 
      // Matches "/api/login
-    $router->post('login', 'AuthController@login');
+   $router->post('login', 'AuthController@login');
+   
+   // Matches "/api/profile
+   $router->get('profile', 'UserController@profile');
+
+   // Matches "/api/users/1 
+   //get one user by id
+   $router->get('users/{id}', 'UserController@singleUser');
+
+   // Matches "/api/users
+   $router->get('users', 'UserController@allUsers');
+
 });
 
 
@@ -40,14 +48,5 @@ $router->group(['prefix' => 'apiV1'] , function() use ($router){
 });
 
 
-// $router->group(['prefix' => 'apiv'] , function() use ($router){
-// $router->get('students',         ['uses' => 'StudentController@showAllStudents']);
-// $router->get('students/{id}',    ['uses' => 'StudentController@showOneStudent']);
-// $router->post('students',        ['uses' => 'StudentController@create']);
-// $router->delete('students/{id}', ['uses' => 'StudentController@delete']);
-// $router->put('students/{id}',    ['uses' => 'StudentController@update']);
-
-
-// });
 
 
