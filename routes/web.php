@@ -23,11 +23,18 @@ $router->get('foo',function(){
     return "hello wandie";
 });
 
+// API route group
+$router->group(['prefix' => 'api'], function () use ($router) {
+    // Matches "/api/register
+    $router->post('register', 'AuthController@register');
+ 
+ });
+
 // create post single route
 //$router->get('create',['uses', 'PostController@create']);
 
 // group routes
-$router->group(['prefix' => 'api'] , function() use ($router){
+$router->group(['prefix' => 'apiV1'] , function() use ($router){
     $router->get('create',['uses', 'PostController@create']);
 });
 
