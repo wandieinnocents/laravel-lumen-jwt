@@ -8,10 +8,10 @@ php -S localhost:8000 -t public
 Authentication using JWT
 
 ## EndPoints
-- POST        : http://localhost:8001/api/register
-- LOGIN       : http://localhost:8001/api/login
-- ALL USERS   : http://localhost:8001/api/users
-- SINGLE USER : http://localhost:8001/api/users/5
-- PROFILE     : http://localhost:8001/api/profile
+POST        : http://localhost:8001/api/register
+LOGIN       : http://localhost:8001/api/login
+ALL USERS   : http://localhost:8001/api/users
+SINGLE USER : http://localhost:8001/api/users/5
+PROFILE     : http://localhost:8001/api/profile
 
 
