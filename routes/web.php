@@ -18,14 +18,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// routes
-$router->get('foo',function(){
-    return "hello wandie";
-});
 
 // API route group
 $router->group(['prefix' => 'api'], function () use ($router) {
-    // Matches "/api/register
+    // Corresponds to  "/api/register
     $router->post('register', 'AuthController@register');
  
  });
