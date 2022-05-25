@@ -11,7 +11,8 @@ class AuthorController extends Controller {
 
     public function showAllAuthors()
     : JsonResponse {
-
+        
+        // return response
         return response()->json(Author::all());
     }
 
@@ -23,9 +24,14 @@ class AuthorController extends Controller {
 
     public function create(Request $request)
     : JsonResponse {
-
+        // validation of data
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:authors',
+            'location' => 'required|alpha'
+        ]);
+        
         $author = Author::create($request->all());
-
         return response()->json($author, Response::HTTP_CREATED);
     }
 
