@@ -17,6 +17,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
 // AUTHENTICATION
  // API route group
 // $router->group(['prefix' => 'api', 'middleware' => 'auth'], function ($router) {
@@ -37,7 +38,17 @@ $router->get('/', function () use ($router) {
    $router->get('users', 'UserController@allUsers');
 
 
-//    AUTHORS
+// AUTHORS
+    $router->get('authors', ['uses' => 'AuthorController@showAllAuthors']);
+
+    $router->get('authors/{id}', ['uses' => 'AuthorController@showOneAuthor']);
+
+    $router->post('authors', ['uses' => 'AuthorController@create']);
+
+    $router->delete('authors/{id}', ['uses' => 'AuthorController@delete']);
+
+    $router->put('authors/{id}', ['uses' => 'AuthorController@update']);
+
 
 
 });
