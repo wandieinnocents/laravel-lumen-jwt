@@ -9,6 +9,13 @@ use Illuminate\Http\Response;
 
 class AuthorController extends Controller {
 
+    // use auth middleware
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function showAllAuthors()
     : JsonResponse {
         
