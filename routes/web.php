@@ -37,6 +37,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
    $router->get('users', 'UserController@allUsers');
 
 });
+$router->group(['middleware' => 'auth'], function ($router)  {
+$router->get('test', 'AuthController@test');
+});
 
 
 // create post single route

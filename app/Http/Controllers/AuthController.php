@@ -68,5 +68,9 @@ class AuthController extends Controller
         
     }
 
+    public function test(){
+        echo "user can access";
+    }
+
 
 }
