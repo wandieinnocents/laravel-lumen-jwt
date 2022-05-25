@@ -17,25 +17,28 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
-
+// AUTHENTICATION
  // API route group
 // $router->group(['prefix' => 'api', 'middleware' => 'auth'], function ($router) {
     $router->group(['prefix' => 'api'], function ($router)  {
-    // Matches "/api/register
+    // register
    $router->post('register', 'AuthController@register');
 
-     // Matches "/api/login
+     // login
    $router->post('login', 'AuthController@login');
    
-   // Matches "/api/profile
+   // user profile
    $router->get('profile', 'UserController@profile');
 
-   // Matches "/api/users/1 
    //get one user by id
    $router->get('users/{id}', 'UserController@singleUser');
 
-   // Matches "/api/users
+   // all users
    $router->get('users', 'UserController@allUsers');
+
+
+//    AUTHORS
+
 
 });
 
