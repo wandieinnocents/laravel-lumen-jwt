@@ -1,9 +1,12 @@
 <?php
 namespace App\Http\Controllers;
-
+// call response helper
+use App\Http\Helper\ResponseBuilder;
 use Illuminate\Http\Request;
 use  App\Models\User;
 use Illuminate\Support\Facades\Auth;
+
+
 
 class AuthController extends Controller
 {
@@ -33,8 +36,18 @@ class AuthController extends Controller
             $user->save();
 
             //return successful response
-            return response()->json(['message' => 'User Created Successfuly' , 'user' => $user], 201);
-            
+           // return response()->json(['message' => 'User has been Created Successfuly' , 'user' => $user], 201);
+            // return with the response helper in app/http/Helper/ResponseBuilder
+            $data = $user;
+            $status = true;
+            $info   = "User resp created";
+
+            // return response ResponseBuilder
+            return ResponseBuilder::result($status,$info,$user);
+
+
+
+
 
         } catch (\Exception $e) {
             //return error message

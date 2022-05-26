@@ -1,15 +1,15 @@
 <?php
-namespace App\Http;
+namespace App\Http\Helper;
 
 
 class ResponseBuilder {
-    public function result($status='', $info='', $data=''){
+    public static function result($status='', $info='', $data=''){
         // return format
         return [
+            "code"        => $code,
             "success"     => $status,
-            "information" => $info,
+            "message"     => $message,
             "data"        => $data
-
 
         ];
 
