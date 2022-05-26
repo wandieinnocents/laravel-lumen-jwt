@@ -46,10 +46,6 @@ class AuthController extends Controller
             // return response ResponseBuilder
             return ResponseBuilder::result($code,$status,$message,$user);
 
-
-
-
-
         } catch (\Exception $e) {
             //return error message
             return response()->json(['message' => 'User Registration Failed!'], 409);
