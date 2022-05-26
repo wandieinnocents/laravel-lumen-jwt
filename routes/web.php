@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+// WORKING ROUTES
 // AUTHENTICATION
  // API route group
 // $router->group(['prefix' => 'api', 'middleware' => 'auth'], function ($router) {
@@ -53,6 +54,8 @@ $router->get('/', function () use ($router) {
 
 });
 
+
+// TESTING ROUTES
 // test
 $router->group(['middleware' => 'auth'], function ($router)  {
 $router->get('test', 'AuthController@test');
@@ -67,6 +70,7 @@ $router->group(['prefix' => 'apiV1'] , function() use ($router){
     $router->get('create',['uses', 'PostController@create']);
 });
 
+$router->get('tester', 'TestController@test');
 
 
 
