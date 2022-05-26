@@ -39,6 +39,9 @@ class AuthorController extends Controller {
         ]);
         
         $author = Author::create($request->all());
+        //alternative way
+        //$author->name = $request->name;
+        //$request->column_name = $request->column_name
         return response()->json($author, Response::HTTP_CREATED);
     }
 
