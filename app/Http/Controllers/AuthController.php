@@ -38,12 +38,13 @@ class AuthController extends Controller
             //return successful response
            // return response()->json(['message' => 'User has been Created Successfuly' , 'user' => $user], 201);
             // return with the response helper in app/http/Helper/ResponseBuilder
-            $data = $user;
+            $code = 201;
             $status = true;
-            $info   = "User resp created";
+            $message   = "User resp created";
+            $data = $user;
 
             // return response ResponseBuilder
-            return ResponseBuilder::result($status,$info,$user);
+            return ResponseBuilder::result($code,$status,$message,$user);
 
 
 
