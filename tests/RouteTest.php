@@ -3,7 +3,7 @@ namespace Tests;
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
-class AppTest extends TestCase
+class RouteTest extends TestCase
 {
     /**
      * A basic test example.
