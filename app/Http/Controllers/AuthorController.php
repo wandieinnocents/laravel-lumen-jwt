@@ -39,6 +39,7 @@ class AuthorController extends Controller {
         return response()->json($author, Response::HTTP_CREATED);
     }
 
+// update author
     public function update($id, Request $request)
     : JsonResponse {
 
@@ -48,6 +49,7 @@ class AuthorController extends Controller {
         return response()->json($author, Response::HTTP_OK);
     }
 
+    // delete author
     public function delete($id) {
 
         Author::findOrFail($id)->delete();
