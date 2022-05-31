@@ -10,25 +10,19 @@ use Illuminate\Http\Response;
 class AuthorController extends Controller {
 
     // use auth middleware
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
     public function showAllAuthors()
     : JsonResponse {
         
         // return response
         return response()->json(Author::all());
     }
-
     public function showOneAuthor($id)
     : JsonResponse {
 
         return response()->json(Author::find($id));
     }
 
+    // create author
     public function create(Request $request)
     : JsonResponse {
         // validation of data
