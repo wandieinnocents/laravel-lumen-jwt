@@ -14,4 +14,11 @@ class AuthorTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    // add author
+    public function testBasicExample()
+    {
+        $this->assertTrue(true);
+    }
+
 }
