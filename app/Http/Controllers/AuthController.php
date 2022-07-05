@@ -34,6 +34,7 @@ class AuthController extends Controller
             $user->password = app('hash')->make($plainPassword);
             // save user
             $user->save();
+            dd("Stop");
 
             //return successful response
            // return response()->json(['message' => 'User has been Created Successfuly' , 'user' => $user], 201);
@@ -74,8 +75,15 @@ class AuthController extends Controller
         if (! $token = Auth::attempt($credentials)) {
             return response()->json(['message' => 'You are not Unauthorized '], 401);
         }
+            // $code = 201;
+            // $status = true;
+            // $message  = "User login success";
+            // $token = $token;
+             // return response ResponseBuilder
+            // return ResponseBuilder::result($code,$status,$message,$token);
 
         return $this->respondWithToken($token);
+        
         
     }
 
